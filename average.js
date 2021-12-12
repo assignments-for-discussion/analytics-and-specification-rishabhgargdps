@@ -2,10 +2,11 @@ function average(numbers) {
     //average is computed as sum / count where count excludes the NaN
     let sum = 0;
     let count = numbers.length;
-    let max_value = Math.max(...numbers);
-    let min_value = Math.min(...numbers);
-    let variation = max_value - min_value; // variation is computed as maximum number - minimum number
-    if (variation > 0.95 * max_value) {
+    let maxValue = Math.max(...numbers);
+    let minValue = Math.min(...numbers);
+    let variation = maxValue - minValue;
+    // variation is computed as maximum number - minimum number
+    if (variation > 0.95 * maxValue) {
         return NaN;
     }
 
