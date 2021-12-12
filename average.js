@@ -1,17 +1,6 @@
 function average(numbers) {
-    //average is computed as sum / count where count excludes the NaN values
-    let res = 0;
-    let count = numbers.length;
-
-    numbers.map((val, i) => {
-        if (isNaN(val)) {
-            count -= 1
-        } else {
-            res += val;
-        }
-    })
-
-    return res / count
+    const array_filter_NaN = numbers.filter(value => !Number.isNaN(value));
+    return array_filter_NaN.reduce((p, c) => p + c, 0) / array_filter_NaN.length;
 }
 
 module.exports = { average };
